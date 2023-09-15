@@ -9,7 +9,7 @@ const Todo = ( {todo,toggleTodo}) => {
             <label>
               <input type="checkbox" checked= {todo.completed} readOnly onChange={handleTodoClick}/>
             </label>
-               <p>{todo.name}:name</p>
+               <p>Todo:{todo.name}</p>
               
               
          </div>

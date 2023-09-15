@@ -7,6 +7,5 @@ import classes from "./CssModules.module.scss";
         <button className ={classes.button}>ボタン</button>
     </div>
     );
-    
-};
+  };
 export default CssModules;

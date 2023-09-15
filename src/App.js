@@ -1,6 +1,9 @@
 import {useState,useEffect,useRef} from "react";
 import { Card } from './components/Card';
 import { v4 as uuidv4 } from 'uuid';
+import {Child1} from'./components/Child1';
+import {Child4} from'./components/Child4';
+
 //import { Routes, Route, Link } from 'react-router-dom';
 
 //import AddTodo from "./AddTodo";
@@ -53,11 +56,16 @@ export const App = () => {
   //const onClickSwitch =()=> setIsAdmin(!isAdmin);
   return (
     <>
-    <div>
+    <div class= "body">
+    <p>今日やることリスト</p>
+     <input class="name_box" type="text" ref={todoNameRef} /> 　
+      <p>
+       <button class="button" onClick={handleAddTodo}>タスクを追加</button>
+       <button class="button" onClick ={handleClear}>完了したタスクの削除</button>
+   　　 </p>
      <TodoList todos={todos} toggleTodo = {toggleTodo}/>
-     <input type="text" ref={todoNameRef} /> 　
-     <button onClick={handleAddTodo}>タスクを追加</button>
-     <button onClick ={handleClear}>完了したタスクの削除</button>
+     <Child1 />
+     <Child4 />
      <div>残りタスク：{todos.filter((todo)=> !todo.completed).length}</div>
       {isAdmin ? <span>管理者です。</span>:<span>管理者以外です。</span>}
       <button onClick={onClickBuntton}>切り替え</button>
